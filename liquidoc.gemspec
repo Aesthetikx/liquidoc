@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'liquid', '>= 4.0.0'
   spec.add_dependency 'nokogiri', '~> 1'
   spec.add_dependency 'rubyzip', '>= 0.9.5'
-  spec.add_dependency 'mimemagic', '~> 0.3.2'
+  spec.add_dependency 'marcel', '~> 1'
 
   spec.add_development_dependency 'bundler', '~> 2'
   spec.add_development_dependency 'minitest', '~> 5.4'

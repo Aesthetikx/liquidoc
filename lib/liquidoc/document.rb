@@ -1,5 +1,4 @@
-require 'mimemagic'
-require 'mimemagic/overlay'
+require 'marcel'
 
 module Liquidoc
   class Document
@@ -34,11 +33,11 @@ module Liquidoc
     private
 
     def document_mime_type
-      @mime ||= MimeMagic.by_path(@path)
+      @mime ||= Marcel::MimeType.for(Pathname.new(@path))
     end
 
     def document_processor
-      @processor ||= PROCESSORS_MAP.fetch(document_mime_type.type, DEFAULT_PROCESSOR).new(@path)
+      @processor ||= PROCESSORS_MAP.fetch(document_mime_type, DEFAULT_PROCESSOR).new(@path)
     end
   end
 end
